@@ -18,4 +18,15 @@ class system_vectors {
     void add(const Vector& vector_new) {
       vectors.push_back(vector_new);
     }
+
+    system_vectors<Vector> operator+(const Vector& vector_new) {
+      auto system_new{*this};
+      system_new.add(vector_new);
+
+      return system_new;
+    }
+
+    system_vectors<Vector> operator+=(const Vector& vector_new) {
+      return *this + vector_new;
+    }
 };
