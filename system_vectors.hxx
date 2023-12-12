@@ -27,6 +27,7 @@ class system_vectors {
     }
 
     system_vectors<Vector> operator+=(const Vector& vector_new) {
-      return *this + vector_new;
+      *this = *this + vector_new;
+      return *this;
     }
 };
